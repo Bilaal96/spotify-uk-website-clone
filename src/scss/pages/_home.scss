@@ -1,0 +1,87 @@
+@use '../variables' as var;
+@use '../media-queries' as mq;
+@use '../components/inputs' as *;
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  height: 100vh;
+  color: map-get(var.$colors, 'primary');
+
+  background-color: map-get(var.$colors, 'secondary');
+  background-image: url('/assets/home/bursts-mobile.svg');
+  background-position: center top 40%;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-size: 215%;
+
+  @include mq.sm {
+    background-image: url('/assets/home/bursts-tablet.svg');
+    background-position: right 40% center;
+    background-size: 153%;
+  }
+
+  @include mq.xl {
+    background-image: url('/assets/home/bursts.svg');
+    background-position: 46% 4%;
+    background-size: 175%;
+  }
+
+  & > * {
+    max-width: 312px;
+  }
+
+  &-heading {
+    font-size: 4.8rem;
+    letter-spacing: -0.3rem;
+    line-height: 1.1;
+
+    @include mq.sm {
+      font-size: clamp(7rem, 14vw, 10.4rem);
+      max-width: 754px;
+    }
+
+    @include mq.xl {
+      max-width: 800px;
+      font-size: clamp(10rem, 12vw, 15.6rem);
+      text-indent: -3.3em;
+      transform: translateX(125px);
+      // transform: translateX(clamp(110px, 10vw, 125px));
+      letter-spacing: -1rem;
+    }
+  }
+
+  &-pitch {
+    letter-spacing: -0.05rem;
+    font-weight: 500;
+
+    @include mq.sm {
+      font-size: 18px;
+      max-width: 400px;
+    }
+
+    @include mq.xl {
+      max-width: 800px;
+      margin-top: 1rem;
+    }
+  }
+
+  &-register-link {
+    &,
+    &:visited {
+      @include pill-button;
+
+      background-color: map-get(var.$colors, 'primary');
+      color: map-get(var.$colors, 'secondary');
+      margin-top: 1.6rem;
+    }
+
+    &:hover {
+      transform: scale(1.04);
+      background-color: lighten(map-get(var.$colors, 'primary'), 5%);
+    }
+  }
+}

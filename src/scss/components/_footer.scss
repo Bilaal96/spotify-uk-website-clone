@@ -1,0 +1,195 @@
+@use '../variables' as var;
+@use '../media-queries' as mq;
+
+$dark-gray: #919496;
+
+.page-footer {
+  background-color: black;
+  padding: 5rem 0 2rem;
+  color: white;
+
+  nav.container {
+    padding: 0 1.5rem;
+  }
+
+  @include mq.lg {
+    padding: 10rem 0 6rem;
+
+    nav.container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  // Logo
+  .brand-wrapper {
+    display: inline-block;
+    margin-bottom: 5rem;
+
+    @include mq.lg {
+      margin-right: 6rem;
+    }
+    @include mq.xl {
+      margin-right: 10rem;
+    }
+  }
+
+  // Spotify footer links
+  .spotify-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    @include mq.md {
+      flex-direction: row;
+      gap: 15rem;
+    }
+    @include mq.lg {
+      gap: 6rem;
+    }
+    @include mq.xl {
+      gap: 10rem;
+    }
+
+    &-group {
+      // margin-bottom: 5rem;
+
+      dt {
+        color: $dark-gray;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+
+        @include mq.lg {
+          margin-top: 1.5rem;
+        }
+      }
+
+      dd {
+        margin-bottom: 1.4rem;
+
+        a {
+          text-decoration: none;
+          font-size: 1.6rem;
+          font-weight: 500;
+          transition: color 0.15s ease;
+
+          &:visited {
+            color: white;
+          }
+
+          &:hover {
+            color: map-get(var.$colors, 'primary');
+          }
+        }
+      }
+    }
+  }
+
+  // Social Media Links
+  .social-icons {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 10rem;
+    // border: 1px solid white;
+
+    @include mq.lg {
+      margin-top: unset;
+      margin-left: auto;
+    }
+
+    span a {
+      width: 4.4rem;
+      height: 4.4rem;
+      background-color: #222326;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mq.lg {
+        width: 5.4rem;
+        height: 5.4rem;
+      }
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        path {
+          fill: white;
+          transition: fill 0.15s ease;
+        }
+      }
+
+      &:hover {
+        path {
+          fill: map-get(var.$colors, 'primary');
+        }
+      }
+    }
+  }
+
+  // Country/Region
+  .select-country {
+    margin: 1rem 0;
+    width: 100%;
+
+    @include mq.lg {
+      margin-top: 8rem;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.8rem;
+      font-size: 1rem;
+      color: $dark-gray;
+      text-decoration: none;
+      transition: 0.15s ease;
+
+      @include mq.md {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        color: map-get(var.$colors, 'primary');
+      }
+    }
+  }
+
+  // Footnote - T&Cs + Copyright
+  .footnote {
+    display: flex;
+    gap: 8rem;
+    width: 100%;
+    justify-content: space-between;
+    color: $dark-gray;
+    font-size: 1rem;
+
+    @include mq.md {
+      font-size: 1.2rem;
+    }
+
+    .terms-and-conditions {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      a {
+        text-decoration: none;
+        transition: 0.15s ease;
+
+        &:hover {
+          color: map-get(var.$colors, 'primary');
+        }
+      }
+    }
+
+    .copyright {
+      flex: 0 0 auto;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+$display-mode: (
+  'b': block,
+  'f': flex,
+  'i': inline,
+  'ib': inline-block,
+  'n': none,
+);
+
+// Utilities
+// -- display mode
+@each $suffix, $mode in $display-mode {
+  .display-#{$suffix} {
+    display: $mode;
+  }
+}
+
+// prevents animations on window resize
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}
