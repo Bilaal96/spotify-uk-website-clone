@@ -296,6 +296,7 @@ $badge-clr: #2e77d0;
     @include mq.lg {
       flex-direction: row;
       flex-wrap: wrap;
+      margin: 0 auto;
     }
 
     .card {
