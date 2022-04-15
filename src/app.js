@@ -21,14 +21,10 @@ navToggle.addEventListener('click', (e) => {
 
   if (isNavClosed) {
     // Open nav drawer & bg-overlay
-    navDrawer.setAttribute('data-visible', true);
-    bgOverlay.setAttribute('data-visible', true);
-    navToggle.setAttribute('data-toggle', 'open');
+    openNav();
   } else {
     // Close nav drawer & bg-overlay
-    navDrawer.setAttribute('data-visible', false);
-    bgOverlay.setAttribute('data-visible', false);
-    navToggle.setAttribute('data-toggle', 'closed');
+    closeNav();
   }
 });
 
@@ -38,8 +34,20 @@ bgOverlay.addEventListener('click', () => {
 
   // Close nav drawer & bg-overlay
   if (isNavOpen) {
-    navDrawer.setAttribute('data-visible', false);
-    bgOverlay.setAttribute('data-visible', false);
-    navToggle.setAttribute('data-toggle', 'closed');
+    closeNav();
   }
 });
+
+function openNav() {
+  navDrawer.setAttribute('data-visible', true);
+  bgOverlay.setAttribute('data-visible', true);
+  navToggle.setAttribute('data-toggle', 'open');
+  document.body.style.position = 'fixed';
+}
+
+function closeNav() {
+  navDrawer.setAttribute('data-visible', false);
+  bgOverlay.setAttribute('data-visible', false);
+  navToggle.setAttribute('data-toggle', 'closed');
+  document.body.style.position = 'static';
+}
