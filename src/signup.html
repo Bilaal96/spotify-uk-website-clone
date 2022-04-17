@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Spotify</title>
+    <title>Signup - Spotify</title>
 
     <!-- Google Font - Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,11 +36,11 @@
       </div>
     </header>
 
-    <main class="auth login">
+    <main class="auth signup">
       <div class="alt-auth-methods">
-        <p>To continue, log in to Spotify.</p>
+        <h2>Sign up for free to start listening.</h2>
         <!-- 3 links -->
-        <button class="auth-btn auth-facebook">
+        <button class="auth-btn auth-facebook signup">
           <!-- Facebook SVG Icon -->
           <svg
             role="img"
@@ -56,50 +56,9 @@
               fill="#181818"
             ></path>
           </svg>
-          <span>Continue With Facebook</span>
+          <span>Sign Up With Facebook</span>
         </button>
-        <button class="auth-btn auth-apple">
-          <!-- Apple SVG Icon -->
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            width="20px"
-            height="40px"
-            viewBox="0 0 20 40"
-            enable-background="new 0 0 20 44"
-            xml:space="preserve"
-          >
-            <g id="FPO"></g>
-            <g id="Global_Nav_Small_Icons"></g>
-            <g id="Global_Nav_Small_1_"></g>
-            <g id="Bag"></g>
-            <g id="Global_Nav_Large_Icons">
-              <path
-                id="Apple"
-                fill="#FFFFFF"
-                d="M18.1,24.227c-0.106,0.307-0.217,0.6-0.335,0.881c-0.288,0.664-0.628,1.275-1.022,1.836
-		c-0.536,0.766-0.976,1.296-1.315,1.59c-0.525,0.483-1.088,0.731-1.691,0.744c-0.433,0-0.954-0.123-1.562-0.372
-		c-0.609-0.249-1.169-0.372-1.681-0.372c-0.537,0-1.113,0.123-1.729,0.372c-0.617,0.249-1.114,0.38-1.494,0.392
-		c-0.578,0.025-1.154-0.229-1.729-0.764c-0.367-0.32-0.826-0.869-1.376-1.646c-0.59-0.83-1.075-1.793-1.455-2.891
-		C2.304,22.812,2.1,21.664,2.1,20.553c0-1.273,0.275-2.371,0.826-3.291c0.433-0.739,1.009-1.322,1.73-1.75
-		c0.721-0.428,1.5-0.646,2.339-0.66c0.459,0,1.061,0.142,1.809,0.421c0.746,0.28,1.225,0.422,1.435,0.422
-		c0.157,0,0.689-0.166,1.591-0.497c0.853-0.307,1.573-0.434,2.163-0.384c1.598,0.129,2.798,0.759,3.597,1.894
-		c-1.429,0.866-2.136,2.079-2.122,3.635c0.013,1.212,0.452,2.221,1.316,3.022C17.176,23.736,17.614,24.023,18.1,24.227z
-		 M14.08,10.305c0.013,0.127,0.019,0.254,0.019,0.38c0,0.95-0.347,1.837-1.038,2.658c-0.835,0.976-1.845,1.54-2.94,1.451
-		c-0.014-0.114-0.022-0.234-0.022-0.36c0-0.912,0.397-1.888,1.102-2.686c0.352-0.404,0.8-0.74,1.342-1.008
-		C13.085,10.476,13.598,10.33,14.08,10.305z"
-              />
-            </g>
-            <g id="Global_Nav_Large_1_"></g>
-            <g id="Guides"></g>
-            <g id="NOTES"></g>
-          </svg>
-          <span>Continue With Apple</span>
-        </button>
-        <button class="auth-btn auth-google">
+        <button class="auth-btn auth-google signup">
           <!-- Google SVG Icon -->
           <svg
             viewBox="0 0 24 24"
@@ -126,54 +85,215 @@
               />
             </g>
           </svg>
-          <span>Continue With Google</span>
+          <span>Sign Up With Google</span>
         </button>
       </div>
 
       <div class="divider-with-text">OR</div>
 
-      <!-- Login Form -->
-      <form class="auth-form login-form">
+      <form class="auth-form signup-form">
+        <h2>Sign up with your email address</h2>
+        <!-- Email -->
         <div class="form-input-group">
-          <label class="form-input-label" for="user-id">
-            Email address or username
+          <label class="form-input-label" for="email">
+            What's your email?
           </label>
           <input
-            id="user-id"
+            id="email"
             class="form-input"
             type="text"
-            placeholder="Email address or username"
+            placeholder="Enter your email"
           />
         </div>
+        <!-- Confirm Email -->
         <div class="form-input-group">
-          <label class="form-input-label" for="password">Password</label>
+          <label class="form-input-label" for="confirm-email">
+            Confirm your email
+          </label>
+          <input
+            id="confirm-email"
+            class="form-input"
+            type="text"
+            placeholder="Enter your email again"
+          />
+        </div>
+        <!-- Password -->
+        <div class="form-input-group">
+          <label class="form-input-label" for="password"
+            >Create a password</label
+          >
           <input
             id="password"
             class="form-input"
             type="password"
-            placeholder="Password"
+            placeholder="Create a password"
           />
         </div>
-        <div class="auth-form-actions">
-          <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+        <!-- Profile Name -->
+        <div class="form-input-group">
+          <label class="form-input-label" for="profile-name"
+            >What should we call you?</label
+          >
+          <input
+            id="profile-name"
+            class="form-input"
+            type="password"
+            placeholder="Enter a profile name"
+          />
+          <p class="form-input-details">This appears on your profile.</p>
+        </div>
 
-          <div class="grouped-actions">
-            <div class="labelled-checkbox">
-              <input type="checkbox" id="remember-login" />
-              <label for="remember-login">Remember me</label>
+        <!-- Date of Birth Input -->
+        <div class="dob-input">
+          <label class="form-input-label">What's your date of birth?</label>
+          <div class="dob-input-container">
+            <!-- Day - text input -->
+            <div class="form-input-group dob-day">
+              <label class="dob-label" for="dob-day">Day</label>
+              <input
+                id="dob-day"
+                class="form-input"
+                type="text"
+                placeholder="DD"
+              />
             </div>
-            <button class="auth-btn auth-traditional">Log In</button>
+            <!-- Month - custom select input -->
+            <div class="form-input-group dob-month">
+              <label class="dob-label" for="dob-month">Month</label>
+              <div class="custom-select">
+                <select id="dob-month">
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+                <!-- Custom Down Arrow -->
+                <svg
+                  role="img"
+                  focusable="false"
+                  height="16"
+                  width="16"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="select-down-arrow"
+                >
+                  <polyline
+                    points="20 8 12 17 4 8"
+                    fill="none"
+                    stroke="#181818"
+                  ></polyline>
+                </svg>
+              </div>
+            </div>
+            <!-- Year - text input -->
+            <div class="form-input-group dob-year">
+              <label class="dob-label" for="dob-year">Year</label>
+              <input
+                id="dob-year"
+                class="form-input"
+                type="text"
+                placeholder="YYYY"
+              />
+            </div>
           </div>
         </div>
+        <!-- Gender - radio buttons -->
+        <div class="form-input-group gender">
+          <label class="form-input-label">What's your gender?</label>
+          <div class="radio-button-group">
+            <div class="labelled-radio-button">
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Male</label>
+            </div>
+            <div class="labelled-radio-button">
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label>
+            </div>
+            <div class="labelled-radio-button">
+              <input
+                type="radio"
+                id="non-binary"
+                name="gender"
+                value="non-binary"
+              />
+              <label for="non-binary">Non-binary</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marketing Checkboxes - opt-in to:
+            [x] receive messages
+            [x] share data
+         -->
+        <div class="opt-in-marketing">
+          <div class="labelled-checkbox">
+            <input type="checkbox" id="opt-in-email-marketing" />
+            <label for="opt-in-email-marketing"
+              >I would prefer not to receive marketing messages from
+              Spotify</label
+            >
+          </div>
+          <div class="labelled-checkbox">
+            <input type="checkbox" id="opt-in-share-data" />
+            <label for="opt-in-share-data"
+              >Share my registration data with Spotify's content providers for
+              marketing purposes. Note that your data may be transferred to a
+              country outside of the EEA as described in our privacy
+              policy.</label
+            >
+          </div>
+        </div>
+
+        <!-- Recaptcha Div with checkbox -->
+        <div class="recaptcha">
+          <div class="labelled-checkbox">
+            <input type="checkbox" id="robo-check" />
+            <label for="robo-check">I'm not a robot</label>
+          </div>
+          <div class="logo-container">
+            <div class="logo"></div>
+            <div class="text">
+              <p>reCAPTCHA</p>
+              <p><a href="#">Privacy</a> . <a href="#">Terms</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms & Policies -->
+        <div class="fine-print">
+          <p class="terms-and-conditions">
+            Spotify is a personalised service. By clicking on sign-up, you agree
+            to Spotify's <a href="#">Terms and Conditions of Use</a>.
+          </p>
+          <p class="privacy-policy">
+            To learn more about how Spotify collects, uses, shares and protects
+            your personal data, please see Spotify's
+            <a href="#">Privacy Policy</a>.
+          </p>
+        </div>
+
+        <!-- Signup -->
+        <div class="auth-form-actions">
+          <button class="auth-btn auth-traditional">Sign Up</button>
+        </div>
       </form>
+      <!-- /signup-form end -->
 
       <hr class="divider" />
 
-      <!-- Signup Link - redirect new users to signup -->
+      <!-- Login Link - Redirect existing users to login -->
       <div class="auth-prompt">
-        <p>Don't have an account?</p>
-        <a class="auth-btn redirect-to-signup" href="signup.html">
-          Sign Up for Spotify
+        <p>Already have an account?</p>
+        <a class="auth-btn redirect-to-login" href="login.html">
+          Log in to Spotify
         </a>
       </div>
     </main>

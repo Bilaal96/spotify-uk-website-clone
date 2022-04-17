@@ -1,0 +1,245 @@
+@use '../variables' as var;
+@use '../media-queries' as mq;
+@use '../components/inputs' as *;
+
+main.auth {
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 4rem;
+}
+
+.alt-auth-methods {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.auth-btn {
+  $breakpoint-sm: map-get(mq.$breakpoints, 'sm');
+
+  @include pill-button;
+  width: 100%;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  // Hide icon on small screens
+  @include mq.max-width($breakpoint-sm) {
+    svg {
+      display: none;
+    }
+  }
+
+  &.signup {
+    width: 90%;
+  }
+
+  &.auth-facebook {
+    background-color: #3b5998;
+    color: white;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      path {
+        fill: white;
+      }
+    }
+  }
+  &.auth-apple {
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+
+    svg path {
+      fill: white;
+    }
+
+    @include mq.max-width($breakpoint-sm) {
+      padding: 1.4rem 3.2rem;
+    }
+  }
+
+  &.auth-google svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &.auth-google,
+  &.redirect-to-signup,
+  &.redirect-to-login {
+    border: 1px solid #6a6a6a;
+    color: #6a6a6a;
+  }
+
+  &.auth-traditional {
+    background-color: map-get(var.$colors, 'primary');
+  }
+
+  &:focus {
+    @include pill-button-focus;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .form-input-group {
+    .form-input-details {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+  }
+
+  &-actions {
+    .forgot-password {
+      margin-bottom: 1rem;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          color: darken(map-get(var.$colors, 'primary'), 15%);
+        }
+      }
+    }
+
+    // Display grouped-actions in single row
+    @include mq.md {
+      .grouped-actions {
+        display: flex;
+        justify-content: space-between;
+
+        .auth-traditional {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+// Signup page only
+main.auth.signup {
+  .form-input-group {
+    &.gender {
+      .radio-button-group {
+        display: flex;
+        gap: 3rem;
+        margin-top: 1.2rem;
+
+        .labelled-radio-button {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          label {
+            font-size: 1.4rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .opt-in-marketing {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0 0;
+  }
+
+  .recaptcha {
+    background-color: #f9f9f9;
+    width: 30.4rem;
+    height: 7.8rem;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 2px;
+    padding-block: 0.6rem 0;
+    padding-inline: 1.2rem;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Helvetica, Arial, sans-serif;
+
+    .logo-container {
+      .logo {
+        background-image: url('/assets/recaptcha.png');
+        width: 3.2rem;
+        height: 3.2rem;
+        background-size: contain;
+        margin: 0 auto;
+      }
+
+      .text {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgb(85, 85, 85);
+        text-align: center;
+        margin-top: 2px;
+
+        a {
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .fine-print {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    p a {
+      color: darken(map-get(var.$colors, 'primary'), 8%);
+
+      &:hover {
+        color: map-get(var.$colors, 'primary');
+      }
+    }
+  }
+}
+
+.auth-prompt {
+  p {
+    text-align: center;
+    margin: 3rem 0 2rem;
+    font-weight: 700;
+  }
+}

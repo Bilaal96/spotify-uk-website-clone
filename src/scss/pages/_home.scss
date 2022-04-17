@@ -69,7 +69,7 @@
     }
   }
 
-  &-register-link {
+  &-signup-link {
     &,
     &:visited {
       @include pill-button;
@@ -77,6 +77,10 @@
       background-color: map-get(var.$colors, 'primary');
       color: map-get(var.$colors, 'secondary');
       margin-top: 1.6rem;
+    }
+
+    &:focus {
+      @include pill-button-focus;
     }
 
     &:hover {

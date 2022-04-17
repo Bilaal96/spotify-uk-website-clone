@@ -52,4 +52,65 @@
   }
 }
 
+// Select with custom arrow icon
+.custom-select {
+  position: relative;
+
+  select {
+    @extend .form-input;
+    appearance: none;
+    padding-right: 4.4rem;
+  }
+
+  .select-down-arrow {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    pointer-events: none;
+  }
+}
+
+// Date of Birth Input
+.dob-input {
+  &-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .form-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    .dob-label {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    &.dob-day {
+      flex: 0 1 20%;
+    }
+    &.dob-month {
+      flex: 0 1 55%;
+    }
+    &.dob-year {
+      flex: 0 1 25%;
+    }
+  }
+}
+
 // Checkbox
+.labelled-checkbox {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+
+  label {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  input[type='checkbox'] {
+    margin-top: 0.4rem;
+  }
+}
