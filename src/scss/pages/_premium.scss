@@ -41,6 +41,11 @@ $badge-clr: #2e77d0;
     .view-plans {
       @include pill-button;
 
+      &:focus {
+        outline: 2px solid white;
+        outline-offset: 3px;
+      }
+
       &:hover {
         transform: scale(1.03);
       }
@@ -358,6 +363,10 @@ $badge-clr: #2e77d0;
 
           background-color: black;
           color: white;
+
+          &:focus {
+            @include pill-button-focus;
+          }
 
           &:hover {
             transform: scale(1.03);

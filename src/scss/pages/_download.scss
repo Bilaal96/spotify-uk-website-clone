@@ -63,6 +63,10 @@
     font-weight: 700;
     margin-bottom: 4rem;
 
+    &:focus {
+      @include pill-button-focus;
+    }
+
     &:hover {
       transform: scale(1.04);
       background-color: #e9e9e9;
