@@ -1,3 +1,4 @@
+// Pill shaped button
 @mixin pill-button {
   background-color: white;
   color: black;
@@ -11,5 +12,44 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02rem;
+  cursor: pointer;
   transition: 0.25s ease;
 }
+
+@mixin pill-button-focus {
+  outline: 3px solid black;
+  outline-offset: 2px;
+}
+
+// Form Input Group
+.form-input-group {
+  margin-bottom: 0.6rem;
+}
+
+// Form Input Label
+.form-input-label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+// Text Form Input
+.form-input {
+  display: block;
+  padding: 1rem;
+  border-radius: 4px;
+  //   border: 1px solid #afafaf;
+  border: 1px solid #878787;
+  width: 100%;
+
+  &:hover {
+    border: 1px solid black;
+  }
+
+  &:focus {
+    outline-width: 4px;
+  }
+}
+
+// Checkbox
