@@ -132,8 +132,9 @@ $dark-gray: #919496;
 
   // Country/Region
   .select-country {
+    display: flex;
+    justify-content: flex-end;
     margin: 1rem 0;
-    width: 100%;
 
     @include mq.lg {
       margin-top: 8rem;
@@ -142,7 +143,6 @@ $dark-gray: #919496;
     a {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
       gap: 0.8rem;
       font-size: 1rem;
       color: $dark-gray;
