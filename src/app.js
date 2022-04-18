@@ -42,12 +42,12 @@ function openNav() {
   navDrawer.setAttribute('data-visible', true);
   bgOverlay.setAttribute('data-visible', true);
   navToggle.setAttribute('data-toggle', 'open');
-  document.body.style.position = 'fixed';
+  document.body.style.overflow = 'hidden';
 }
 
 function closeNav() {
   navDrawer.setAttribute('data-visible', false);
   bgOverlay.setAttribute('data-visible', false);
   navToggle.setAttribute('data-toggle', 'closed');
-  document.body.style.position = 'static';
+  document.body.style.overflow = 'auto';
 }
