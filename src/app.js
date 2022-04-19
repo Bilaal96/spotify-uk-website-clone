@@ -42,17 +42,17 @@ bgOverlay.addEventListener('click', () => {
 });
 
 function openNav() {
+  document.body.classList.add('prevent-scroll');
+  navToggle.setAttribute('aria-expanded', true);
   navDrawer.setAttribute('data-visible', true);
   bgOverlay.setAttribute('data-visible', true);
-  navToggle.setAttribute('data-toggle', 'open');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeNav() {
+  document.body.classList.remove('prevent-scroll');
+  navToggle.setAttribute('aria-expanded', false);
   navDrawer.setAttribute('data-visible', false);
   bgOverlay.setAttribute('data-visible', false);
-  navToggle.setAttribute('data-toggle', 'closed');
-  document.body.style.overflow = 'auto';
 }
 
 // Support Page - Listen for click on each Accordion toggle

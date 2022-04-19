@@ -19,3 +19,7 @@ $display-mode: (
   transition: none !important;
   animation: none !important;
 }
+
+.prevent-scroll {
+  overflow: hidden;
+}
