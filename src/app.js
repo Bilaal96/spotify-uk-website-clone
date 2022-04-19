@@ -3,6 +3,9 @@ const navToggleIcon = document.querySelector('.hamburger');
 const navDrawer = document.querySelector('.nav-menu');
 const bgOverlay = document.querySelector('.bg-overlay');
 
+// Support Category Accordions
+const supportAccordionToggles = document.querySelectorAll('.category-heading');
+
 // prevent animations on window resize
 let resizeTimer;
 window.addEventListener('resize', () => {
@@ -51,3 +54,27 @@ function closeNav() {
   navToggle.setAttribute('data-toggle', 'closed');
   document.body.style.overflow = 'auto';
 }
+
+// Support Page - Listen for click on each Accordion toggle
+supportAccordionToggles.forEach((accordionToggle) =>
+  accordionToggle.addEventListener('click', (e) => {
+    // Only process click event if screen width is 991px or less
+    if (window.matchMedia('(max-width: 991px)').matches === false) return;
+
+    const accordionBody = e.target.nextElementSibling;
+    const accordionToggleChevron = accordionToggle.querySelector('.chevron');
+
+    // Expand accordion body
+    accordionBody.classList.toggle('expand');
+
+    // Control aria-expanded attribute for accordionToggle
+    // NOTE: If aria-expanded == true, chevron icon is rotated 180deg
+    if (accordionBody.classList.contains('expand')) {
+      accordionToggle.setAttribute('aria-expanded', 'true');
+      accordionToggleChevron.setAttribute('aria-expanded', 'true');
+    } else {
+      accordionToggle.setAttribute('aria-expanded', 'false');
+      accordionToggleChevron.setAttribute('aria-expanded', 'false');
+    }
+  })
+);
