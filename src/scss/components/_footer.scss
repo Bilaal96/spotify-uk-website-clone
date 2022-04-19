@@ -52,8 +52,6 @@ $dark-gray: #919496;
     }
 
     &-group {
-      // margin-bottom: 5rem;
-
       dt {
         color: $dark-gray;
         text-transform: uppercase;
@@ -92,7 +90,6 @@ $dark-gray: #919496;
     display: flex;
     gap: 1.6rem;
     margin-top: 10rem;
-    // border: 1px solid white;
 
     @include mq.lg {
       margin-top: unset;
@@ -135,6 +132,7 @@ $dark-gray: #919496;
     display: flex;
     justify-content: flex-end;
     margin: 1rem 0;
+    flex: 0 1 100%;
 
     @include mq.lg {
       margin-top: 8rem;
