@@ -1,3 +1,5 @@
+@use '../variables' as var;
+
 // Pill shaped button
 @mixin pill-button {
   background-color: white;
@@ -110,8 +112,49 @@
     font-weight: 500;
   }
 
+  // Custom checkbox styles
   input[type='checkbox'] {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid #878787;
+    border-radius: 0.3rem;
     align-self: flex-start;
     margin-top: 0.4rem;
+    &:hover {
+      border: 1px solid #169b45;
+    }
+    &:focus {
+      outline-offset: 0.4rem;
+    }
+    &:checked {
+      background-color: #169b45;
+      border-color: #169b45;
+    }
+  }
+
+  // Custom check mark
+  input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 9px;
+    border-color: white;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    transform-origin: center;
+    transform: rotate(-48deg) translate(-50%, -50%);
+    bottom: 50%;
+    left: 50%;
+    display: none;
+  }
+
+  input[type='checkbox']:checked::after {
+    display: block;
   }
 }
