@@ -158,3 +158,61 @@
     display: block;
   }
 }
+
+.radio-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+
+.labelled-radio-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  input[type='radio'] {
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid #878787;
+    border-radius: 50%;
+    // Center inner circle
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      border-color: #169b45;
+    }
+    &:focus {
+      outline-offset: 4px;
+    }
+    &:checked {
+      background-color: #169b45;
+      border: 1px solid #169b45;
+    }
+  }
+
+  // Inner Circle
+  input[type='radio']::after {
+    content: '';
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    display: none;
+  }
+
+  input[type='radio']:checked::after {
+    display: block;
+  }
+
+  label {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}

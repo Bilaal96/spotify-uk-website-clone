@@ -157,23 +157,8 @@ main.auth.login {
 // Signup page only
 main.auth.signup {
   .form-input-group {
-    &.gender {
-      .radio-button-group {
-        display: flex;
-        gap: 3rem;
-        margin-top: 1.2rem;
-
-        .labelled-radio-button {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-
-          label {
-            font-size: 1.4rem;
-            font-weight: 500;
-          }
-        }
-      }
+    &.gender .radio-button-group {
+      margin-top: 1.2rem;
     }
   }
 
