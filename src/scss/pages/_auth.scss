@@ -147,26 +147,18 @@ main.auth {
   }
 }
 
+// Login page only
+main.auth.login {
+  .labelled-checkbox input[type='checkbox'] {
+    margin-top: 0.2rem;
+  }
+}
+
 // Signup page only
 main.auth.signup {
   .form-input-group {
-    &.gender {
-      .radio-button-group {
-        display: flex;
-        gap: 3rem;
-        margin-top: 1.2rem;
-
-        .labelled-radio-button {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-
-          label {
-            font-size: 1.4rem;
-            font-weight: 500;
-          }
-        }
-      }
+    &.gender .radio-button-group {
+      margin-top: 1.2rem;
     }
   }
 
@@ -190,6 +182,40 @@ main.auth.signup {
     align-items: center;
     justify-content: space-between;
     font-family: Helvetica, Arial, sans-serif;
+
+    .labelled-checkbox {
+      align-items: center;
+      input[type='checkbox'] {
+        width: 2.8rem;
+        height: 2.8rem;
+        background-color: white;
+        border: 2px solid rgb(185, 185, 185);
+        border-radius: 0.2rem;
+        margin: 0;
+
+        &:hover {
+          border-color: rgb(167, 167, 167);
+        }
+        &:focus {
+          border-color: #4e8ff5;
+          outline: 0;
+        }
+        &:checked {
+          background-color: #f9f9f9;
+          border: none;
+        }
+      }
+
+      // Checked
+      input[type='checkbox']::after {
+        width: 30px;
+        height: 14px;
+        border-left-width: 3px;
+        border-bottom-width: 3px;
+        border-color: #169b45;
+        margin-bottom: 0.5rem;
+      }
+    }
 
     .logo-container {
       .logo {
