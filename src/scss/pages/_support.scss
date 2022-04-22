@@ -6,14 +6,14 @@
 .search {
   color: white;
   background-color: #1c2965;
-  background-image: url('/assets/support/search-mobile.webp');
+  background-image: url('../assets/support/search-mobile.webp');
   background-repeat: no-repeat;
   background-position: top / 100%;
   background-size: cover;
   padding-block: 3rem 6rem;
   padding-inline: 0.8rem;
   @include mq.md {
-    background-image: url('/assets/support/search-desktop.webp');
+    background-image: url('../assets/support/search-desktop.webp');
     padding-block: 8rem 7rem;
   }
 

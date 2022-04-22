@@ -12,20 +12,20 @@
   color: map-get(var.$colors, 'primary');
 
   background-color: map-get(var.$colors, 'secondary');
-  background-image: url('/assets/home/bursts-mobile.svg');
+  background-image: url('../assets/home/bursts-mobile.svg');
   background-position: center top 40%;
   background-repeat: no-repeat;
   text-align: center;
   background-size: 215%;
 
   @include mq.sm {
-    background-image: url('/assets/home/bursts-tablet.svg');
+    background-image: url('../assets/home/bursts-tablet.svg');
     background-position: right 40% center;
     background-size: 153%;
   }
 
   @include mq.xl {
-    background-image: url('/assets/home/bursts.svg');
+    background-image: url('../assets/home/bursts.svg');
     background-position: 46% 4%;
     background-size: 175%;
   }
