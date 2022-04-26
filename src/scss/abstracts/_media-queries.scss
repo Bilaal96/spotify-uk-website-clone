@@ -42,3 +42,16 @@ $breakpoints: (
     @content;
   }
 }
+
+// Vertical Media Query
+@mixin min-height($bp: 0) {
+  @media (min-height: $bp) {
+    @content;
+  }
+}
+
+@mixin max-height($bp: 0) {
+  @media (max-height: $bp) {
+    @content;
+  }
+}

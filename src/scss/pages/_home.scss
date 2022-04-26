@@ -49,7 +49,6 @@
       font-size: clamp(10rem, 12vw, 15.6rem);
       text-indent: -3.3em;
       transform: translateX(125px);
-      // transform: translateX(clamp(110px, 10vw, 125px));
       letter-spacing: -1rem;
     }
   }
@@ -72,19 +71,14 @@
   &-signup-link {
     &,
     &:visited {
-      @include pill-button;
-
+      @extend .pill-button;
       background-color: clr.$primary;
       color: clr.$accent;
       margin-top: 1.6rem;
     }
 
-    &:focus {
-      @include pill-button-focus;
-    }
-
     &:hover {
-      transform: scale(1.04);
+      transform: scale(1.05);
       background-color: lighten(clr.$primary, 5%);
     }
   }

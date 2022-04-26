@@ -1,7 +1,7 @@
 @use '../abstracts/colors' as clr;
 
 // Pill shaped button
-@mixin pill-button {
+.pill-button {
   background-color: white;
   color: black;
   padding: 1.4rem 3.2rem;
@@ -15,12 +15,16 @@
   text-transform: uppercase;
   letter-spacing: -0.02rem;
   cursor: pointer;
-  transition: 0.25s ease;
-}
+  transition: 0.2s ease;
 
-@mixin pill-button-focus {
-  outline: 3px solid black;
-  outline-offset: 2px;
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &:focus {
+    outline: 3px solid black;
+    outline-offset: 2px;
+  }
 }
 
 // Form Input Group
