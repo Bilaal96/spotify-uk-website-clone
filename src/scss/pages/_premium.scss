@@ -158,6 +158,7 @@
     align-items: center;
     justify-content: center;
     list-style-type: none;
+    overflow: hidden;
 
     @include mq.md {
       flex-direction: row;

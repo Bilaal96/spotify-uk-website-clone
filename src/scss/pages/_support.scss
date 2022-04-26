@@ -171,6 +171,11 @@
         cursor: default;
       }
 
+      h3,
+      .chevron {
+        pointer-events: none;
+      }
+
       h3 {
         font-size: 1.8rem;
         @include mq.md {
