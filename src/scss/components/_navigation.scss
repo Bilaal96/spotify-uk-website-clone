@@ -10,13 +10,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
+    margin-inline: auto;
     padding-inline: 1.5rem;
   }
 }
 
 .brand-wrapper {
-  flex: 0 0 auto; // prevent shrink
+  flex-shrink: 0; // prevent shrink
 }
 
 .brand-logo {
@@ -75,8 +75,7 @@
   }
 }
 
-// Side drawer navigation
-// @media (max-width: 992px)
+// Side drawer navigation - smaller than "lg" breakpoint
 @include mq.max-width(map-get(mq.$breakpoints, 'lg')) {
   .navbar {
     .container {
@@ -146,6 +145,7 @@
     }
   }
 
+  // Background Overlay
   .bg-overlay[data-visible='true'] {
     position: fixed;
     inset: 0;
@@ -171,10 +171,15 @@
 
     .nav-brand-wrapper {
       display: block;
-
       position: absolute;
       left: 4rem;
       bottom: 4rem;
+
+      @include mq.max-height(530px) {
+        // move to right to prevent overlap with .nav-item's
+        // left: auto;
+        // right: 4rem;
+      }
     }
 
     .nav-list {
@@ -191,7 +196,6 @@
         height: 0.2rem;
         width: 2rem;
         margin: 2rem 0;
-        // transform: rotate(90deg) translateY(-10px);
 
         & ~ .nav-item {
           font-size: 2.8rem;
@@ -201,7 +205,6 @@
 
     .nav-link {
       width: 100%;
-      //   padding: 0 0 2rem;
       padding: 0;
     }
   }

@@ -2,7 +2,7 @@
 @use '../abstracts/media-queries' as mq;
 @use '../components/inputs' as *;
 
-// Section 1
+// Section 1 - search bar
 .search {
   color: white;
   background-color: clr.$biscay;
@@ -33,7 +33,7 @@
   .search-bar {
     position: relative;
     max-width: 744px;
-    margin: 0 auto;
+    margin-inline: auto;
 
     .search-icon {
       position: absolute;
@@ -133,7 +133,7 @@
   }
 }
 
-// Section 2
+// Section 2 - accordion & links
 .support-categories {
   background-color: map-get(clr.$neutral, '200');
   @include mq.lg {
@@ -146,7 +146,7 @@
     @include mq.lg {
       flex-direction: row;
       flex-wrap: wrap;
-      margin: 0 auto;
+      margin-inline: auto;
       max-width: map-get(mq.$breakpoints, 'lg');
     }
   }
@@ -240,7 +240,7 @@
   }
 }
 
-// Section 3
+// Section 3 - Spotify community forum link
 .ask-community {
   padding: 6.4rem 1.6rem;
   text-align: center;
@@ -267,18 +267,10 @@
   }
 
   a {
-    @include pill-button;
+    @extend .pill-button;
     display: block;
     width: max-content;
-    margin: 0 auto;
+    margin-inline: auto;
     background-color: clr.$primary;
-
-    &:focus {
-      @include pill-button-focus;
-    }
-
-    &:hover {
-      transform: scale(1.04);
-    }
   }
 }
