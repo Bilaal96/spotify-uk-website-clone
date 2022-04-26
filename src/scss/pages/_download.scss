@@ -1,9 +1,9 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 @use '../components/inputs' as *;
 
 .cta-download {
-  background-color: #19e68c;
+  background-color: clr.$primary-light;
   padding: 4rem 1.5rem 10.4rem;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@
 
     &:hover {
       transform: scale(1.04);
-      background-color: #e9e9e9;
+      background-color: map-get(clr.$neutral, '200');
     }
   }
 }
@@ -110,7 +110,7 @@
 }
 
 .all-platforms {
-  background-color: #222326;
+  background-color: map-get(clr.$neutral, '800');
   color: white;
   padding: 8rem 1.5rem;
   text-align: center;
@@ -148,7 +148,7 @@
       // Add bullet point after each list item (except last one)
       li:not(:last-child):after {
         content: '•';
-        color: map-get(var.$colors, 'primary');
+        color: clr.$primary;
         padding: 0 1.4rem;
       }
     }
@@ -157,13 +157,11 @@
       padding-bottom: 1.4rem;
 
       a {
-        $dark-primary: darken(map-get(var.$colors, 'primary'), 10%);
-
-        color: $dark-primary;
+        color: darken(clr.$primary, 10%);
         transition: color 0.15s ease;
 
         &:hover {
-          color: lighten($dark-primary, 10%);
+          color: clr.$primary;
         }
       }
     }

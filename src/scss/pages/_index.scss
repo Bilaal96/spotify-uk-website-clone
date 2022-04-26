@@ -1,5 +1,5 @@
-@use 'home';
-@use 'premium';
-@use 'support';
-@use 'download';
-@use 'auth';
+@forward 'home';
+@forward 'premium';
+@forward 'support';
+@forward 'download';
+@forward 'auth';

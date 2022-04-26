@@ -1,7 +1,5 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
-
-$dark-gray: #919496;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 
 .page-footer {
   background-color: black;
@@ -53,7 +51,7 @@ $dark-gray: #919496;
 
     &-group {
       dt {
-        color: $dark-gray;
+        color: map-get(clr.$neutral, '600');
         text-transform: uppercase;
         font-size: 1.2rem;
         font-weight: 700;
@@ -78,7 +76,7 @@ $dark-gray: #919496;
           }
 
           &:hover {
-            color: map-get(var.$colors, 'primary');
+            color: clr.$primary;
           }
         }
       }
@@ -99,7 +97,7 @@ $dark-gray: #919496;
     span a {
       width: 4.4rem;
       height: 4.4rem;
-      background-color: #222326;
+      background-color: map-get(clr.$neutral, '800');
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -121,7 +119,7 @@ $dark-gray: #919496;
 
       &:hover {
         path {
-          fill: map-get(var.$colors, 'primary');
+          fill: clr.$primary;
         }
       }
     }
@@ -143,7 +141,7 @@ $dark-gray: #919496;
       align-items: center;
       gap: 0.8rem;
       font-size: 1rem;
-      color: $dark-gray;
+      color: map-get(clr.$neutral, '600');
       text-decoration: none;
       transition: 0.15s ease;
 
@@ -152,7 +150,7 @@ $dark-gray: #919496;
       }
 
       &:hover {
-        color: map-get(var.$colors, 'primary');
+        color: clr.$primary;
       }
     }
   }
@@ -163,7 +161,7 @@ $dark-gray: #919496;
     gap: 8rem;
     width: 100%;
     justify-content: space-between;
-    color: $dark-gray;
+    color: map-get(clr.$neutral, '600');
     font-size: 1rem;
 
     @include mq.md {
@@ -181,7 +179,7 @@ $dark-gray: #919496;
         transition: 0.15s ease;
 
         &:hover {
-          color: map-get(var.$colors, 'primary');
+          color: clr.$primary;
         }
       }
     }

@@ -1,5 +1,5 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 @use '../components/inputs' as *;
 
 .cta {
@@ -9,9 +9,9 @@
   justify-content: center;
   gap: 2rem;
   height: 100vh;
-  color: map-get(var.$colors, 'primary');
+  color: clr.$primary;
 
-  background-color: map-get(var.$colors, 'secondary');
+  background-color: clr.$accent;
   background-image: url('../assets/home/bursts-mobile.svg');
   background-position: center top 40%;
   background-repeat: no-repeat;
@@ -74,8 +74,8 @@
     &:visited {
       @include pill-button;
 
-      background-color: map-get(var.$colors, 'primary');
-      color: map-get(var.$colors, 'secondary');
+      background-color: clr.$primary;
+      color: clr.$accent;
       margin-top: 1.6rem;
     }
 
@@ -85,7 +85,7 @@
 
     &:hover {
       transform: scale(1.04);
-      background-color: lighten(map-get(var.$colors, 'primary'), 5%);
+      background-color: lighten(clr.$primary, 5%);
     }
   }
 }

@@ -1,5 +1,5 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 @use '../components/inputs' as *;
 
 main.auth {
@@ -50,7 +50,7 @@ main.auth {
   }
 
   &.auth-facebook {
-    background-color: #3b5998;
+    background-color: clr.$chambray-blue;
     color: white;
 
     svg {
@@ -83,12 +83,12 @@ main.auth {
   &.auth-google,
   &.redirect-to-signup,
   &.redirect-to-login {
-    border: 1px solid #6a6a6a;
-    color: #6a6a6a;
+    border: 1px solid map-get(clr.$neutral, '700');
+    color: map-get(clr.$neutral, '700');
   }
 
   &.auth-traditional {
-    background-color: map-get(var.$colors, 'primary');
+    background-color: clr.$primary;
   }
 
   &:focus {
@@ -128,7 +128,7 @@ main.auth {
 
         &:hover {
           text-decoration: underline;
-          color: darken(map-get(var.$colors, 'primary'), 15%);
+          color: darken(clr.$primary, 15%);
         }
       }
     }
@@ -170,10 +170,10 @@ main.auth.signup {
   }
 
   .recaptcha {
-    background-color: #f9f9f9;
+    background-color: map-get(clr.$neutral, '100');
     width: 30.4rem;
     height: 7.8rem;
-    border: 1px solid rgb(209, 209, 209);
+    border: 1px solid map-get(clr.$neutral, '300');
     border-radius: 2px;
     padding-block: 0.6rem 0;
     padding-inline: 1.2rem;
@@ -189,19 +189,19 @@ main.auth.signup {
         width: 2.8rem;
         height: 2.8rem;
         background-color: white;
-        border: 2px solid rgb(185, 185, 185);
+        border: 2px solid map-get(clr.$neutral, '400');
         border-radius: 0.2rem;
         margin: 0;
 
         &:hover {
-          border-color: rgb(167, 167, 167);
+          border-color: map-get(clr.$neutral, '500');
         }
         &:focus {
-          border-color: #4e8ff5;
+          border-color: clr.$cornflower-blue;
           outline: 0;
         }
         &:checked {
-          background-color: #f9f9f9;
+          background-color: map-get(clr.$neutral, '100');
           border: none;
         }
       }
@@ -212,7 +212,7 @@ main.auth.signup {
         height: 14px;
         border-left-width: 3px;
         border-bottom-width: 3px;
-        border-color: #169b45;
+        border-color: clr.$primary-dark;
         margin-bottom: 0.5rem;
       }
     }
@@ -229,7 +229,7 @@ main.auth.signup {
       .text {
         font-size: 0.9rem;
         font-weight: 500;
-        color: rgb(85, 85, 85);
+        color: map-get(clr.$neutral, '700');
         text-align: center;
         margin-top: 2px;
 
@@ -253,10 +253,10 @@ main.auth.signup {
     margin-bottom: 1rem;
 
     p a {
-      color: darken(map-get(var.$colors, 'primary'), 8%);
+      color: darken(clr.$primary, 8%);
 
       &:hover {
-        color: map-get(var.$colors, 'primary');
+        color: clr.$primary;
       }
     }
   }

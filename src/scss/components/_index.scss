@@ -1,6 +1,6 @@
-@use 'auth-header';
-@use 'container';
-@use 'divider';
-@use 'footer';
-@use 'inputs';
-@use 'navigation';
+@forward 'auth-header';
+@forward 'container';
+@forward 'divider';
+@forward 'footer';
+@forward 'inputs';
+@forward 'navigation';
