@@ -8,25 +8,32 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  height: 100vh;
+  min-height: 480px;
   color: clr.$primary;
+  text-align: center;
 
   background-color: clr.$accent;
   background-image: url('../assets/home/bursts-mobile.svg');
-  background-position: center top 40%;
   background-repeat: no-repeat;
-  text-align: center;
-  background-size: 215%;
+  background-position: center top 40%;
+  background-size: 185%;
 
   @include mq.sm {
     background-image: url('../assets/home/bursts-tablet.svg');
     background-position: right 40% center;
-    background-size: 153%;
+    background-size: 154%;
+  }
+
+  @include mq.md {
+    min-height: 600px;
+    background-position: right 50% top 60%;
+    background-size: 120%;
   }
 
   @include mq.xl {
+    min-height: 800px;
     background-image: url('../assets/home/bursts.svg');
-    background-position: 46% 4%;
+    background-position: 45% 20%;
     background-size: 175%;
   }
 
