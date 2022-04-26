@@ -1,4 +1,4 @@
-@use '../media-queries' as media-query;
+@use '../abstracts/media-queries' as mq;
 
 // Narrows the site width and horizontally centers content
 .container {
@@ -6,11 +6,11 @@
   max-width: 750px;
   margin: 0 auto;
 
-  @include media-query.lg {
+  @include mq.lg {
     max-width: 970px;
   }
 
-  @include media-query.xl {
+  @include mq.xl {
     max-width: 1170px;
   }
 }

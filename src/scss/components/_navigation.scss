@@ -1,5 +1,5 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 
 .navbar {
   width: 100%;
@@ -25,7 +25,7 @@
   transition: fill 0.2s ease;
 
   &:hover {
-    fill: map-get(var.$colors, 'primary');
+    fill: clr.$primary;
   }
 
   @include mq.lg {
@@ -70,7 +70,7 @@
     transition: color 0.2s ease;
 
     &:hover {
-      color: map-get(var.$colors, 'primary');
+      color: clr.$primary;
     }
   }
 }
@@ -141,7 +141,7 @@
       .middle-line,
       &::after // bottom line
       {
-        background-color: map-get(var.$colors, 'primary');
+        background-color: clr.$primary;
       }
     }
   }

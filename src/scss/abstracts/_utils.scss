@@ -1,0 +1,10 @@
+// prevents animations on window resize
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}
+
+// removes scroll bar (and ability to view overflowing content) from an element
+.prevent-scroll {
+  overflow: hidden;
+}

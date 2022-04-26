@@ -1,8 +1,6 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 @use '../components/inputs' as *;
-
-$badge-clr: #2e77d0;
 
 .cta-offers {
   color: white;
@@ -66,7 +64,7 @@ $badge-clr: #2e77d0;
       transition: color 0.15s ease;
     }
     a:hover {
-      color: map-get(var.$colors, 'primary');
+      color: clr.$primary;
     }
   }
 }
@@ -119,7 +117,7 @@ $badge-clr: #2e77d0;
 }
 
 .sales-point-2 {
-  background-color: #a5bbd1;
+  background-color: clr.$rock-blue;
   padding: 6rem 1.5rem;
   text-align: center;
 
@@ -329,7 +327,7 @@ $badge-clr: #2e77d0;
     .badge {
       display: inline-block;
       color: white;
-      background-color: #2e77d0;
+      background-color: clr.$accent-light;
       padding: 0.2rem 0.8rem;
       margin-bottom: 1rem;
       border-radius: 4px;
@@ -392,11 +390,11 @@ $badge-clr: #2e77d0;
     }
 
     a + a {
-      background-color: rgb(196, 196, 196);
+      background-color: map-get(clr.$neutral, '300');
       color: black;
 
       &:hover {
-        color: rgb(20, 131, 59);
+        color: darken(clr.$primary-dark, 10%);
       }
     }
   }
@@ -408,7 +406,7 @@ $badge-clr: #2e77d0;
     border-bottom-right-radius: 1rem;
 
     .terms-and-conditions {
-      color: rgb(83, 83, 83);
+      color: map-get(clr.$neutral, '700');
       font-size: 1.1rem;
     }
   }

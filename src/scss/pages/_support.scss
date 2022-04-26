@@ -1,11 +1,11 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 @use '../components/inputs' as *;
 
 // Section 1
 .search {
   color: white;
-  background-color: #1c2965;
+  background-color: clr.$biscay;
   background-image: url('../assets/support/search-mobile.webp');
   background-repeat: no-repeat;
   background-position: top / 100%;
@@ -39,7 +39,7 @@
       position: absolute;
       top: 1.1rem;
       left: 1.2rem;
-      stroke: #6a6a6a;
+      stroke: map-get(clr.$neutral, '600');
       stroke-width: 1pt;
       @include mq.md {
         top: 1.4rem;
@@ -91,7 +91,7 @@
     %solution-heading {
       font-size: 1.2rem;
       font-weight: 500;
-      color: #d9d9d9;
+      color: map-get(clr.$neutral, '300');
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 1.2rem;
@@ -135,7 +135,7 @@
 
 // Section 2
 .support-categories {
-  background-color: #eee;
+  background-color: map-get(clr.$neutral, '200');
   @include mq.lg {
     padding-block: 3rem 2rem;
   }
@@ -165,7 +165,7 @@
       align-items: center;
       background-color: white;
       padding: 1.6rem;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid map-get(clr.$neutral, '300');
       cursor: pointer;
       @include mq.lg {
         cursor: default;
@@ -206,7 +206,7 @@
 
       &.expand {
         max-height: 600px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid map-get(clr.$neutral, '300');
       }
 
       @include mq.lg {
@@ -228,7 +228,7 @@
 
         li a {
           text-decoration: none;
-          color: darken(map-get(var.$colors, 'primary'), 20%);
+          color: darken(clr.$primary, 20%);
           font-weight: 700;
 
           &:hover {
@@ -271,7 +271,7 @@
     display: block;
     width: max-content;
     margin: 0 auto;
-    background-color: map-get(var.$colors, 'primary');
+    background-color: clr.$primary;
 
     &:focus {
       @include pill-button-focus;

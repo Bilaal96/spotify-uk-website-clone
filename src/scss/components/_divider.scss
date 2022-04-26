@@ -1,4 +1,6 @@
-$divider-line: #d9dadc;
+@use '../abstracts/colors' as clr;
+
+$divider-line: map-get(clr.$neutral, '300');
 
 hr.divider {
   border: 0;
@@ -9,7 +11,7 @@ hr.divider {
 
 .divider-with-text {
   position: relative;
-  color: #6a6a6a;
+  color: map-get(clr.$neutral, '700');
   font-weight: 700;
   margin: 2rem 0;
   width: 100%;
@@ -17,10 +19,11 @@ hr.divider {
   display: flex;
   gap: 2rem;
 
+  // Divider lines
   &::before,
   &::after {
     content: '';
-    background-color: #d9dadc;
+    background-color: $divider-line;
     height: 2px;
     flex: 0 1 100%;
     transform: translateY(1rem);

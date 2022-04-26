@@ -1,9 +1,4 @@
-// files
-@use 'variables';
 @use 'base';
-@use 'media-queries';
-@use 'utils';
-
-// directories
+@use 'abstracts';
 @use 'pages';
 @use 'components';

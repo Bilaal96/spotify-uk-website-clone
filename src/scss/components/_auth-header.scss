@@ -1,9 +1,9 @@
-@use '../variables' as var;
-@use '../media-queries' as mq;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/media-queries' as mq;
 
 .auth-header {
   width: 100%;
-  border-bottom: 1px solid #d9dadc;
+  border-bottom: 1px solid map-get(clr.$neutral, '300');
   padding: 1rem;
   margin-bottom: 1rem;
 
@@ -30,7 +30,6 @@
     height: 42px;
 
     &:hover {
-      //   fill: darken(map-get(var.$colors, 'primary'), 10%);
       fill: black;
     }
 
