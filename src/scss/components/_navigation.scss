@@ -49,7 +49,7 @@
     list-style-type: none;
     display: flex;
     align-items: center;
-    padding: 0 0 0 4rem;
+    padding-left: 4rem;
   }
 
   // li
@@ -134,8 +134,8 @@
       }
     }
 
-    // Hamburger hover styles
-    &:hover {
+    // Hamburger active styles; i.e. on click
+    &:active {
       &::before, // top line
       .middle-line,
       &::after // bottom line
@@ -160,26 +160,42 @@
     bottom: 0;
     width: 447px;
     max-width: 100vw;
+    padding: 4rem;
     background-color: black;
     transform: translate(100%);
     transition: transform 0.3s ease-out;
     z-index: 1000;
 
+    // Space out menu items from logo
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10rem;
+
+    // Expanded navigation drawer
     &[data-visible='true'] {
       transform: translate(0%);
+
+      // Make scrollable if overflowing
+      overflow-y: scroll;
+
+      // -- Firefox scrollbar
+      scrollbar-color: clr.$primary-dark black;
+      scrollbar-width: thin;
+
+      // -- webkit scrollbar
+      &::-webkit-scrollbar {
+        width: 0.8rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: clr.$primary-dark;
+        border-radius: 3px;
+      }
     }
 
     .nav-brand-wrapper {
       display: block;
-      position: absolute;
-      left: 4rem;
-      bottom: 4rem;
-
-      @include mq.max-height(530px) {
-        // move to right to prevent overlap with .nav-item's
-        // left: auto;
-        // right: 4rem;
-      }
     }
 
     .nav-list {
@@ -188,7 +204,7 @@
       align-items: flex-start;
       gap: 2rem;
       font-size: 3.6rem;
-      padding: 4rem;
+      padding-left: 0;
     }
 
     .nav-item {
