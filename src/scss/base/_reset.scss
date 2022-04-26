@@ -1,3 +1,5 @@
+@use '../abstracts/colors' as clr;
+
 // Reset - https://www.joshwcomeau.com/css/custom-css-reset
 /*
   1. Use a more-intuitive box-sizing model.
@@ -76,6 +78,21 @@ h6 {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  // -- Firefox scrollbar
+  scrollbar-color: darken(clr.$primary, 5%) black;
+  scrollbar-width: thin;
+
+  // -- webkit scrollbar
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background-color: black;
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darken(clr.$primary, 5%);
+  }
 }
 
 body {
