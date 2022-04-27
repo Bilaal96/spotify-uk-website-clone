@@ -130,13 +130,6 @@
 
     // Navigation expanded/open state
     &[aria-expanded='true'] {
-      // Position .nav-toggle button when nav is expanded
-      // Aligns cross icon with hamburger position
-      margin-right: 0.8rem;
-      @include mq.min-width(750px) {
-        margin-right: 0.4rem;
-      }
-
       // Style cross/close menu icon when nav is expanded
       .hamburger {
         .middle-line {
