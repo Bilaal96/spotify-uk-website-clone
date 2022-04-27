@@ -197,7 +197,7 @@
       transform: translate(0%);
 
       // Make scrollable if overflowing
-      overflow-y: scroll;
+      overflow: auto;
 
       // -- Firefox scrollbar
       scrollbar-color: clr.$primary-dark black;
@@ -210,7 +210,6 @@
 
       &::-webkit-scrollbar-thumb {
         background-color: clr.$primary-dark;
-        border-radius: 3px;
       }
     }
 
