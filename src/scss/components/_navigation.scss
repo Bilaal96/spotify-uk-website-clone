@@ -77,65 +77,84 @@
 
 // Side drawer navigation - smaller than "lg" breakpoint
 @include mq.max-width(map-get(mq.$breakpoints, 'lg')) {
-  .navbar {
-    .container {
-      height: 54px;
-    }
+  .navbar .container {
+    height: 54px;
   }
 
+  // Clickable button (larger than icon)
   .nav-toggle {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 2.2rem;
-    height: 2.4rem;
-    padding: 0 0.4rem;
+    display: block;
+    height: 100%;
     border: 0;
     background-color: transparent;
     cursor: pointer;
     z-index: 9999;
+    padding-inline: 1rem;
 
-    &::before,
-    &::after {
-      content: '';
-    }
+    // Visual toggle icon
+    .hamburger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 2.2rem;
+      height: 2.4rem;
+      pointer-events: none;
 
-    &::before, // top line
-    .middle-line,
-    &::after // bottom line
-    {
-      position: absolute;
-      inset-inline: 0; // full width of parent
-      height: 0.3rem;
-      background-color: white;
-      transition: transform 0.25s ease, opacity 0.25s ease,
-        background-color 0.2s ease;
-    }
-
-    &::before {
-      transform: translateY(-0.7rem);
-    }
-
-    &::after {
-      transform: translateY(0.7rem);
-    }
-
-    // Toggle open state
-    &[aria-expanded='true'] {
-      .middle-line {
-        opacity: 0;
-      }
-
-      &::before {
-        transform: rotate(-45deg);
-      }
+      // Top and bottom lines of .hamburger
+      &::before,
       &::after {
-        transform: rotate(45deg);
+        content: '';
+      }
+
+      &::before, // top line
+      .middle-line,
+      &::after // bottom line
+      {
+        position: absolute;
+        inset-inline: 0; // full width of parent
+        height: 0.3rem;
+        background-color: white;
+        transition: transform 0.25s ease, opacity 0.25s ease,
+          background-color 0.2s ease;
+      }
+
+      // Position top and bottom lines (relative to middle line)
+      &::before {
+        transform: translateY(-0.7rem);
+      }
+
+      &::after {
+        transform: translateY(0.7rem);
       }
     }
 
-    // Hamburger active styles; i.e. on click
-    &:active {
+    // Navigation expanded/open state
+    &[aria-expanded='true'] {
+      // Position .nav-toggle button when nav is expanded
+      // Aligns cross icon with hamburger position
+      margin-right: 0.8rem;
+      @include mq.min-width(750px) {
+        margin-right: 0.4rem;
+      }
+
+      // Style cross/close menu icon when nav is expanded
+      .hamburger {
+        .middle-line {
+          opacity: 0;
+        }
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    // Style .hamburger on .nav-toggle click
+    &:active .hamburger {
       &::before, // top line
       .middle-line,
       &::after // bottom line
@@ -153,6 +172,7 @@
     z-index: 1000;
   }
 
+  // Navigation drawer (opens from right side of viewport)
   .nav-menu {
     position: fixed;
     top: 0;
@@ -177,7 +197,7 @@
       transform: translate(0%);
 
       // Make scrollable if overflowing
-      overflow-y: scroll;
+      overflow: auto;
 
       // -- Firefox scrollbar
       scrollbar-color: clr.$primary-dark black;
@@ -190,7 +210,6 @@
 
       &::-webkit-scrollbar-thumb {
         background-color: clr.$primary-dark;
-        border-radius: 3px;
       }
     }
 
@@ -198,6 +217,7 @@
       display: block;
     }
 
+    // ul
     .nav-list {
       width: 100%;
       flex-direction: column;
@@ -207,6 +227,7 @@
       padding-left: 0;
     }
 
+    // li
     .nav-item {
       &.separator {
         height: 0.2rem;
@@ -219,6 +240,7 @@
       }
     }
 
+    // a
     .nav-link {
       width: 100%;
       padding: 0;
